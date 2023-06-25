@@ -1,0 +1,44 @@
+/* Debug classes */
+.debug-block {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  outline: 2px solid #fff;
+  width: 200px;
+  height: 200px;
+}
+
+.debug-block-2 {
+  outline: 2px solid #fff;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.border {
+  border: 1px solid #000;
+}
+
+.debug-red {
+  outline: 2px solid red;
+}
+
+.debug-white {
+  outline: 2px solid #fff;
+}
+
+.debug-black {
+  outline: 2px solid #000;
+}
+
+.debug-green {
+  outline: 2px solid green;
+}
+
+.debug-blue {
+  outline: 2px solid blue;
+}
