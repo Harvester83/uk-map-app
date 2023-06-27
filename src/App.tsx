@@ -107,8 +107,6 @@ const App: React.FC = () => {
 
       map.fitBounds(bounds);
       map.setZoom(8);
-
-      console.log({properties});
       const name = level === "level_1" ? properties.lvl1_name : properties.lvl2_name
 
       const popupContent = `<strong>Region name: ${name}</strong><br>Density: ${properties.Density}`;
@@ -128,8 +126,6 @@ const App: React.FC = () => {
     if (!bbox) {
       return;
     }
-
-    console.log("bbox: ", bbox);
 
     setMapOptions({
       ...mapOptions,
@@ -199,7 +195,6 @@ const App: React.FC = () => {
                   <li
                     key={index}
                     onClick={() => {
-                      console.log(item);
                       getFitBounds(item.bbox, item.properties);
                     }}
                   >

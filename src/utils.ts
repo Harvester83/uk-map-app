@@ -20,12 +20,8 @@ export const getCenterBbox = (bbox: number[]) => {
 };
 
 export const getCenterBound = (bounds: LatLngBoundsExpression | LatLngBounds | LatLngBoundsLiteral ) => {
-  //console.log({ bound });
-
   const bboxBounds = new LatLngBounds(bounds as LatLngBoundsLiteral);
   const center: LatLngExpression = bboxBounds.getCenter();
-
-  //console.log(center); // Output: [58.080999925, -6.341788285]
 
   return center;
 };
