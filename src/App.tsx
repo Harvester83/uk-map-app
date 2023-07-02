@@ -8,18 +8,13 @@ import L, {
   LatLngBoundsExpression,
   LatLngExpression,
 } from "leaflet";
-import {
-  getCenterBbox,
-  getCenterBound,
-  getColor,
-  getPopupContent,
-} from "./utils";
+import { getCenterBound, getColor } from "./utils";
 
 type MapOptionsType = {
   bounds: LatLngBoundsExpression | LatLngBounds | null;
   coordinates: LatLngExpression;
   zoom: number;
-  featureProperties: any
+  featureProperties: any;
 };
 
 const App: React.FC = () => {
@@ -29,7 +24,7 @@ const App: React.FC = () => {
     bounds: null,
     coordinates: [54.7023545, -4.2765753] as LatLngExpression,
     zoom: 6,
-    featureProperties: {}
+    featureProperties: {},
   });
 
   const [dataset, setDataset] = React.useState<any>(null);
@@ -107,7 +102,8 @@ const App: React.FC = () => {
 
       map.fitBounds(bounds);
       map.setZoom(8);
-      const name = level === "level_1" ? properties.lvl1_name : properties.lvl2_name
+      const name =
+        level === "level_1" ? properties.lvl1_name : properties.lvl2_name;
 
       const popupContent = `<strong>Region name: ${name}</strong><br>Density: ${properties.Density}`;
       const center = getCenterBound(bounds);
@@ -122,7 +118,10 @@ const App: React.FC = () => {
     return null;
   };
 
-  const getFitBounds = (bbox: LatLngBoundsExpression | any, properties: any) => {
+  const getFitBounds = (
+    bbox: LatLngBoundsExpression | any,
+    properties: any
+  ) => {
     if (!bbox) {
       return;
     }
@@ -232,7 +231,7 @@ const App: React.FC = () => {
                     weight: 1,
                   };
                 }}
-                onEachFeature={(feature, layer) => {
+                onEachFeature={(_feature, layer: any) => {
                   const name =
                     level === "level_1"
                       ? item.properties.lvl1_name
@@ -246,7 +245,10 @@ const App: React.FC = () => {
             );
           })}
 
-        <FitBounds bounds={mapOptions.bounds} properties={mapOptions.featureProperties}/>
+        <FitBounds
+          bounds={mapOptions.bounds}
+          properties={mapOptions.featureProperties}
+        />
       </MapContainer>
     </div>
   );

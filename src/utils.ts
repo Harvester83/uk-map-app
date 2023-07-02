@@ -1,4 +1,4 @@
-import L, {
+import {
   LatLngBounds,
   LatLngBoundsExpression,
   LatLngBoundsLiteral,
